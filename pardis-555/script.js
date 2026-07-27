@@ -15,7 +15,7 @@ function startLove() {
 
     // شروع قلب ها
     createHearts();
-
+    createPetals();
 
     // ظاهر شدن عکس ها با تاخیر
     animatePhotos();
@@ -165,3 +165,72 @@ box.style.transform=
 
 
 });
+// --------------------
+// Stars
+// --------------------
+
+function createStars(){
+
+const stars=document.getElementById("stars");
+
+for(let i=0;i<120;i++){
+
+const star=document.createElement("div");
+
+star.className="star";
+
+const size=Math.random()*3+1;
+
+star.style.width=size+"px";
+star.style.height=size+"px";
+
+star.style.left=Math.random()*100+"%";
+star.style.top=Math.random()*100+"%";
+
+star.style.animationDuration=
+(2+Math.random()*4)+"s";
+
+stars.appendChild(star);
+
+}
+
+}
+
+createStars();
+
+
+// --------------------
+// Petals
+// --------------------
+
+function createPetals(){
+
+const petals=document.getElementById("petals");
+
+setInterval(()=>{
+
+const petal=document.createElement("div");
+
+petal.className="petal";
+
+petal.innerHTML="🌸";
+
+petal.style.left=Math.random()*100+"%";
+
+petal.style.fontSize=
+(18+Math.random()*18)+"px";
+
+petal.style.animationDuration=
+(8+Math.random()*5)+"s";
+
+petals.appendChild(petal);
+
+setTimeout(()=>{
+
+petal.remove();
+
+},13000);
+
+},900);
+
+}
